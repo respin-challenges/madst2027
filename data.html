@@ -38,6 +38,7 @@
           <li><a href="news.html">News</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="organisers.html">Organisers</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -48,7 +49,7 @@
     <div class="page-head">
       <div class="wrap">
         <h1>Data</h1>
-        <p class="lede">Newly recorded read speech in nine languages, with human translations of every sentence and human reference speech for every development and test direction.</p>
+        <p class="lede">New sentences in nine Indian languages, each translated by people into the other eight and read aloud. Every development and test sentence has human reference text and human reference speech in all nine languages.</p>
       </div>
     </div>
 
@@ -58,27 +59,61 @@
         <section>
           <h2 id="overview">At a glance</h2>
           <dl class="facts">
+            <dt>Languages</dt>
+            <dd>Nine: Bengali, Bhojpuri, Chhattisgarhi, Hindi, Kannada, Magahi, Maithili, Marathi and Telugu, giving 72 translation directions</dd>
             <dt>Original sentences</dt>
-            <dd>About 20,500, between 2,000 and 3,000 per language, in standard dialects</dd>
+            <dd>About 20,500 unique sentences, between 2,000 and 3,000 per language, in standard dialects</dd>
+            <dt>Splits</dt>
+            <dd>About 16,000 training, 1,800 development and 2,700 test sentences</dd>
             <dt>Human translations</dt>
-            <dd>Over 140,000, from each original into the other eight languages</dd>
+            <dd>About 164,000: every original sentence is translated into the other eight languages</dd>
             <dt>Speakers</dt>
-            <dd>270, 30 per language, balanced by gender</dd>
+            <dd>270, 30 per language, balanced by gender: 14 for training, 6 for development and 10 for test in each language</dd>
             <dt>Utterances</dt>
             <dd>81,000 newly recorded read-speech utterances, 300 sentences per speaker</dd>
+            <!-- NEED THESE DETAILS: total hours of speech. Restore this row when confirmed:
             <dt>Hours of speech</dt>
-            <dd class="muted">To be announced</dd>
+            <dd>...</dd>
+            -->
           </dl>
-          <!-- NEED THESE DETAILS: total hours of speech; exact number of translations (proposal says "over 140,000", but
-               20,500 originals x 8 languages is about 164,000); per language 30 x 300 = 9,000 utterances but
-               train 4,200 + dev 1,800 + test 2,700 = 8,700 - please confirm the split sizes. -->
         </section>
 
         <section>
-          <h2 id="groups">Sentence groups</h2>
+          <h2 id="construction">How the data is built</h2>
+          <ol class="prose">
+            <li><strong>Original sentences.</strong> Each language contributes between 2,000 and 3,000 original sentences in its standard dialect, about 20,500 in total.</li>
+            <li><strong>Translation.</strong> People translate every original sentence into the other eight languages. An original and its eight translations form a <strong>sentence group</strong>: the same sentence in all nine languages.</li>
+            <li><strong>Recording.</strong> Speakers read the sentences aloud: 30 speakers per language, balanced by gender, 300 sentences each.</li>
+            <li><strong>Splitting.</strong> Groups are divided into training, development and test sets. A group always stays in one split, so no sentence, in any language, appears in both training and test data. No speaker appears in more than one split.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 id="sentences">Sentences by language</h2>
           <div class="prose">
-            <p>A <strong>group</strong> is one original sentence together with all of its translations. A group always stays in one split, so no sentence, in any language, appears in both training and test data. No speaker appears in more than one split.</p>
-            <p>Every development and test group is recorded in all nine languages. Each direction therefore has human reference text and human reference speech for every development and test sentence. Many training groups are also recorded in several languages, giving real speech-to-speech pairs.</p>
+            <p>Rows give the language a sentence was originally written in; columns give the language of the text. The shaded diagonal counts the originals, and every other cell counts their human translations. Because every original is translated into all eight other languages, each row has the same number in every column, and every language has text for every sentence group.</p>
+          </div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Sentences by original language and text language">
+            <table class="data matrix-table">
+              <caption>Number of sentences in the released data, by original language (rows) and text language (columns). Row total: the originals plus their eight translations. Column total: all sentences in that language.</caption>
+              <thead>
+                <tr><th scope="col">Original language</th><th scope="col" class="n">Bengali</th><th scope="col" class="n">Bhojpuri</th><th scope="col" class="n">Chhattisgarhi</th><th scope="col" class="n">Hindi</th><th scope="col" class="n">Kannada</th><th scope="col" class="n">Magahi</th><th scope="col" class="n">Maithili</th><th scope="col" class="n">Marathi</th><th scope="col" class="n">Telugu</th><th scope="col" class="n total">Total</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Bengali</th><td class="n is-orig">3,000</td><td class="n">3,000</td><td class="n">3,000</td><td class="n">3,000</td><td class="n">3,000</td><td class="n">3,000</td><td class="n">3,000</td><td class="n">3,000</td><td class="n">3,000</td><td class="n total">27,000</td></tr>
+                <tr><th scope="row">Bhojpuri</th><td class="n">2,503</td><td class="n is-orig">2,503</td><td class="n">2,503</td><td class="n">2,503</td><td class="n">2,503</td><td class="n">2,503</td><td class="n">2,503</td><td class="n">2,503</td><td class="n">2,503</td><td class="n total">22,527</td></tr>
+                <tr><th scope="row">Chhattisgarhi</th><td class="n">2,001</td><td class="n">2,001</td><td class="n is-orig">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n total">18,009</td></tr>
+                <tr><th scope="row">Hindi</th><td class="n">2,998</td><td class="n">2,998</td><td class="n">2,998</td><td class="n is-orig">2,998</td><td class="n">2,998</td><td class="n">2,998</td><td class="n">2,998</td><td class="n">2,998</td><td class="n">2,998</td><td class="n total">26,982</td></tr>
+                <tr><th scope="row">Kannada</th><td class="n">2,003</td><td class="n">2,003</td><td class="n">2,003</td><td class="n">2,003</td><td class="n is-orig">2,003</td><td class="n">2,003</td><td class="n">2,003</td><td class="n">2,003</td><td class="n">2,003</td><td class="n total">18,027</td></tr>
+                <tr><th scope="row">Magahi</th><td class="n">2,002</td><td class="n">2,002</td><td class="n">2,002</td><td class="n">2,002</td><td class="n">2,002</td><td class="n is-orig">2,002</td><td class="n">2,002</td><td class="n">2,002</td><td class="n">2,002</td><td class="n total">18,018</td></tr>
+                <tr><th scope="row">Maithili</th><td class="n">2,035</td><td class="n">2,035</td><td class="n">2,035</td><td class="n">2,035</td><td class="n">2,035</td><td class="n">2,035</td><td class="n is-orig">2,035</td><td class="n">2,035</td><td class="n">2,035</td><td class="n total">18,315</td></tr>
+                <tr><th scope="row">Marathi</th><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n is-orig">2,001</td><td class="n">2,001</td><td class="n total">18,009</td></tr>
+                <tr><th scope="row">Telugu</th><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n">2,001</td><td class="n is-orig">2,001</td><td class="n total">18,009</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><th scope="row">Total</th><td class="n">20,544</td><td class="n">20,544</td><td class="n">20,544</td><td class="n">20,544</td><td class="n">20,544</td><td class="n">20,544</td><td class="n">20,544</td><td class="n">20,544</td><td class="n">20,544</td><td class="n total">184,896</td></tr>
+              </tfoot>
+            </table>
           </div>
         </section>
 
@@ -87,15 +122,28 @@
           <div class="table-scroll" tabindex="0" role="region" aria-label="Data splits">
             <table class="data">
               <thead>
-                <tr><th scope="col">Split</th><th scope="col">Size</th><th scope="col">Per direction</th><th scope="col">References</th></tr>
+                <tr><th scope="col">Split</th><th scope="col">Sentence groups</th><th scope="col">Speakers per language</th><th scope="col">Speech</th><th scope="col">References</th></tr>
               </thead>
               <tbody>
-                <tr><th scope="row">Training</th><td>4,200 utterances per language from 14 speakers, each paired with its translations</td><td class="muted">To be announced<!-- NEED THESE DETAILS: training size per direction (number of real speech-to-speech pairs). --></td><td>Released with references</td></tr>
-                <tr><th scope="row">Development</th><td>200 groups per source language</td><td class="num">1,800 sentences</td><td>Released with reference text and speech</td></tr>
-                <tr><th scope="row">Test</th><td>300 groups per source language</td><td class="num">2,700 sentences</td><td>Audio only; references withheld</td></tr>
+                <tr><th scope="row">Training</th><td>About 16,000</td><td class="num">14</td><td>4,200 utterances per language, each paired with its translations</td><td>Released with references</td></tr>
+                <tr><th scope="row">Development</th><td>1,800 (200 per original language)</td><td class="num">6</td><td>Every group recorded in all nine languages</td><td>Released with reference text and speech</td></tr>
+                <tr><th scope="row">Test</th><td>2,700 (300 per original language)</td><td class="num">10</td><td>Every group recorded in all nine languages</td><td>Audio only; references withheld</td></tr>
               </tbody>
             </table>
           </div>
+          <!-- NEED THESE DETAILS: number of test utterances per language (10 speakers x 300 sentences = 3,000, but there are
+               2,700 test sentences). Shown as speakers only until confirmed. -->
+
+          <h3 id="per-direction">In each direction</h3>
+          <div class="prose">
+            <p>Take any direction, for example Bhojpuri to Kannada:</p>
+            <ul>
+              <li><strong>Development:</strong> 1,800 sentences, each with human reference text and human reference speech.</li>
+              <li><strong>Test:</strong> 2,700 sentences, with references withheld until the challenge ends.</li>
+              <li><strong>Training:</strong> parallel text for all training groups. Many training groups are also recorded in several languages, giving real speech-to-speech pairs.</li>
+            </ul>
+          </div>
+          <!-- NEED THESE DETAILS: training size per direction (number of real speech-to-speech pairs). -->
         </section>
 
         <section>
@@ -135,7 +183,7 @@
             <p>Open-track systems may use any public corpora. The challenge description names these as examples:</p>
             <ul>
               <li><strong>RESPIN-S1.0</strong>, a read speech corpus of over 10,000 hours in dialects of nine Indian languages (Kumar et al., NeurIPS 2025 Datasets and Benchmarks Track, <a href="https://doi.org/10.52202/085713-4928">doi:10.52202/085713-4928</a>). See also the <a href="https://respin.iisc.ac.in/">RESPIN project</a>.</li>
-              <li><strong>SYSPIN</strong>.</li>
+              <li><strong>SYSPIN_S1.0</strong>, a TTS corpus of over 900 hours in nine Indian languages (Abhayjeet et al., &ldquo;SYSPIN_S1.0 Corpus &ndash; A TTS Corpus of 900+ hours in nine Indian Languages&rdquo;, 2025). Available from the <a href="https://spiredatasets.ee.iisc.ac.in/syspincorpus">SYSPIN corpus page</a>.</li>
             </ul>
           </div>
         </section>
@@ -145,6 +193,24 @@
 
   <!-- layout:footer -->
   <footer class="site-footer">
+    <div class="footer-orgs">
+      <div class="wrap footer-orgs-inner">
+        <div class="org-group">
+          <h2>Organised by</h2>
+          <ul class="org-list">
+            <li><span class="org"><img src="assets/img/iisc.png" width="91" height="80" alt="" loading="lazy"><span>Indian Institute of Science</span></span></li>
+            <li><a class="org" href="https://spire.ee.iisc.ac.in/"><img src="assets/img/spire.png" width="52" height="80" alt="" loading="lazy"><span>SPIRE Lab</span></a></li>
+            <li><a class="org" href="https://respin.iisc.ac.in/"><img src="assets/img/respin.png" width="123" height="80" alt="" loading="lazy"><span>RESPIN</span></a></li>
+          </ul>
+        </div>
+        <div class="org-group">
+          <h2>Hosted at</h2>
+          <ul class="org-list">
+            <li><a class="org" href="https://2027.ieeeasli.org/"><img src="assets/img/asli.png" width="106" height="80" alt="" loading="lazy"><span>ASLI 2027</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="wrap footer-grid">
       <div>
         <p class="footer-name">MADST Challenge</p>
@@ -153,8 +219,9 @@
       </div>
       <div>
         <h2>Contact</h2>
-        <p data-contact="email">Contact address to be announced.</p>
+        <p data-contact="email"><a href="mailto:contact.respin@iisc.ac.in">contact.respin@iisc.ac.in</a></p>
         <p data-contact="discussionUrl"></p>
+        <p><a href="contact.html">All contact details</a></p>
       </div>
       <div>
         <h2>Pages</h2>
@@ -170,6 +237,7 @@
           <li><a href="news.html">News</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="organisers.html">Organisers</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>

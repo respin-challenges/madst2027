@@ -1,7 +1,7 @@
 {
   "name": "MADST Challenge",
   "shortName": "MADST",
-  "fullName": "MADST: Multilingual Any-Direction Speech Translation Challenge",
+  "fullName": "MADST: Multilingual Any-Direction Speech Translation Challenge across Nine Indian Languages",
   "description": "Translate speech between any two of nine Indian languages, into text or directly into speech.",
   "lastUpdated": "2026-11-23",
   "host": {
@@ -20,7 +20,7 @@
     "_NEED_THESE_DETAILS": "Time zone and closing time for the challenge's own deadlines (e.g. submissions close) are not stated in the proposal."
   },
   "contact": {
-    "email": null,
+    "email": "contact.respin@iisc.ac.in",
     "technicalEmail": null,
     "discussionUrl": null,
     "discussionLabel": null

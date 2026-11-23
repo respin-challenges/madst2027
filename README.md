@@ -17,7 +17,8 @@ dates.html            Full timeline, calendar export
 leaderboard.html      Official results (empty until results exist)
 news.html             Announcements
 faq.html              Questions with settled answers
-organisers.html       People and contact
+organisers.html       People
+contact.html          Email and postal address
 404.html              Custom "page not found" (served by GitHub Pages)
 
 content/              All changeable data (edit these, not the pages)
@@ -29,6 +30,7 @@ content/              All changeable data (edit these, not the pages)
   faq.json            FAQ entries
 assets/css/site.css   Styles (design tokens at the top)
 assets/js/site.js     Renders the content files; no dependencies
+assets/img/           Logos (IISc, SPIRE Lab, RESPIN, ASLI 2027), resized from the originals in reference_docs/
 tools/sync-layout.mjs Optional: rewrites header/nav/footer on every page
 .nojekyll             Tells GitHub Pages to serve files as they are
 ```
@@ -77,7 +79,7 @@ All dates live in `content/timeline.json`. Each event has:
 | `time` | `"23:59"` for deadlines, `null` for whole-day events |
 | `endDate` | optional, for multi-day events |
 | `status` | `confirmed` or `tentative` (tentative is labelled on the site) |
-| `countdown` | `true` lets the event appear as the "next date" in the top strip and countdown |
+| `countdown` | `true` lets the event appear as the "next date" in the top strip and countdown (both are switched off for now: set `SHOW_NEXT_DATE = true` in `assets/js/site.js` once the dates are final) |
 
 Times are in the site time zone set in `content/site.json` (`timezone.utcOffsetMinutes`; AoE is `-720`). The site converts deadlines to each visitor's local time, marks past dates as passed, never shows a passed date as upcoming, and offers an `.ics` calendar download.
 
@@ -103,6 +105,7 @@ Only enter official results. In `content/leaderboard.json`:
 - **People:** `content/people.json`.
 - **FAQ:** `content/faq.json`. Only add questions with settled answers.
 - **Page text:** edit the HTML file directly. Keep the `<!-- layout:... -->` markers.
+- **Footer logos:** the logo list and their links are at the top of `tools/sync-layout.mjs` (`ORGANISERS`, `HOST_LOGO`); run the script after changing them.
 - **Navigation, challenge name, host details in header/footer:** change `tools/sync-layout.mjs` or `content/site.json`, then run `node tools/sync-layout.mjs` from the repository root. It rewrites the shared header, navigation and footer on every page.
 
 ## Previewing locally
@@ -130,5 +133,6 @@ All links are relative, so the site also works at a domain root or under a custo
 
 - The direction matrix (nine languages by nine) is the identity element; the same grid becomes the per-direction score heatmap on the leaderboard. It makes no claim about which languages appear in other benchmarks.
 - Colour: an indigo scale, plus one warm accent reserved for the next deadline. Status is always given in text, never by colour alone.
+- Logos: the ASLI 2027 logo sits next to the host line on the home page; the IISc, SPIRE Lab, RESPIN and ASLI logos appear in a white band at the top of every footer, each with its name written beside it. No other decorative images.
 - Type: Anek (Ek Type) for headings and interface; Source Serif 4 for reading text. Native-script names are hidden until the organisers confirm them (`SHOW_NATIVE` in `assets/js/site.js`); turning them on and running `node tools/sync-layout.mjs` also adds the subset Indic-script fonts.
 - Accessibility: skip link, visible focus, keyboard-operable matrix, labelled regions for scrolling tables, reduced-motion support, WCAG AA contrast.

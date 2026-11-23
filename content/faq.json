@@ -17,6 +17,16 @@
       "a": "The **constrained track** allows only the challenge training set and a fixed list of public checkpoints announced at launch. The **open track** allows the challenge data plus any public corpora and any public model; proprietary APIs are allowed only if declared. See [tracks](challenge.html#tracks)."
     },
     {
+      "group": "The challenge",
+      "q": "Do I have to take part in both tracks?",
+      "a": "No. You can choose either track: the **constrained track** or the **open track**."
+    },
+    {
+      "group": "The challenge",
+      "q": "Within a track, do I have to take part in both tasks?",
+      "a": "No. You can take part in Task 1 (speech-to-text translation), Task 2 (speech-to-speech translation), or both."
+    },
+    {
       "group": "Rules",
       "q": "Can I use Whisper, SeamlessM4T or IndicTrans2 in the constrained track?",
       "a": "Only checkpoints on the fixed list are allowed in the constrained track. The list will be announced at launch."

@@ -30,6 +30,11 @@
     { code: 'mr', lang: 'mr',  en: 'Marathi',       native: 'मराठी' },
     { code: 'te', lang: 'te',  en: 'Telugu',        native: 'తెలుగు' }
   ];
+  // Next-date highlight: the "Next date" strip on every page, the countdown
+  // on the home page and the "Next" tag in timelines. Off until the dates
+  // are final; set to true to turn all three back on.
+  var SHOW_NEXT_DATE = false;
+
   var DEV_PER_DIRECTION = 1800;   // proposal: 200 groups x 9 source languages
   var TEST_PER_DIRECTION = 2700;  // proposal: 300 groups x 9 source languages
 
@@ -206,7 +211,7 @@
   // ------------------------------------------------------------------
   function renderStrip(site, tl) {
     var el = $('#deadline-strip');
-    if (!el) return;
+    if (!el || !SHOW_NEXT_DATE) return;
     var tz = site.timezone;
     function paint() {
       var c = classify(tl.events, tz.utcOffsetMinutes, new Date());
@@ -230,6 +235,7 @@
   function timelineItem(ev, tz, now, nextId, showLocal) {
     var off = tz.utcOffsetMinutes;
     var past = evEnd(ev, off) <= now;
+    if (!SHOW_NEXT_DATE) nextId = null;
     var cls = past ? 'is-past' : (ev.id === nextId ? 'is-next' : '');
     var dateLine = ev.endDate ? rangeText(ev) : dayText(ev.date, true);
     var timeLine = ev.time ? deadlineTimeText(ev, tz) : '';
@@ -283,6 +289,12 @@
   }
 
   function renderCountdown(el, site, tl) {
+    if (!SHOW_NEXT_DATE) {
+      el.hidden = true;
+      if (el.parentNode) el.parentNode.classList.add('is-single');
+      done(el);
+      return;
+    }
     var tz = site.timezone;
     function paint() {
       var now = new Date();

@@ -34,7 +34,17 @@ const NAV = [
   ['news.html', 'News'],
   ['faq.html', 'FAQ'],
   ['organisers.html', 'Organisers'],
+  ['contact.html', 'Contact'],
 ];
+
+// Logos in the footer band. Images are decorative (alt=""), because the
+// name is written next to each one. url: null shows the logo without a link.
+const ORGANISERS = [
+  { img: 'assets/img/iisc.png', w: 181, h: 160, name: 'Indian Institute of Science', url: null },
+  { img: 'assets/img/spire.png', w: 104, h: 160, name: 'SPIRE Lab', url: 'https://spire.ee.iisc.ac.in/' },
+  { img: 'assets/img/respin.png', w: 246, h: 160, name: 'RESPIN', url: 'https://respin.iisc.ac.in/' },
+];
+const HOST_LOGO = { img: 'assets/img/asli.png', w: 211, h: 160 };
 
 const longDate = (iso) => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
   .format(new Date(iso + 'T00:00:00Z'));
@@ -83,11 +93,33 @@ function header(current) {
   `;
 }
 
+function org(o) {
+  const inner = `<img src="${o.img}" width="${Math.round(o.w / 2)}" height="${Math.round(o.h / 2)}" alt="" loading="lazy"><span>${esc(o.name)}</span>`;
+  return o.url ? `<li><a class="org" href="${esc(o.url)}">${inner}</a></li>` : `<li><span class="org">${inner}</span></li>`;
+}
+
 function footer() {
   const links = [['index.html', 'Home'], ...NAV].map(([href, label]) =>
     `<li><a href="${href}">${label}</a></li>`).join('\n          ');
+  const host = { ...HOST_LOGO, name: site.host.name, url: site.host.url };
   return `
   <footer class="site-footer">
+    <div class="footer-orgs">
+      <div class="wrap footer-orgs-inner">
+        <div class="org-group">
+          <h2>Organised by</h2>
+          <ul class="org-list">
+            ${ORGANISERS.map(org).join('\n            ')}
+          </ul>
+        </div>
+        <div class="org-group">
+          <h2>Hosted at</h2>
+          <ul class="org-list">
+            ${org(host)}
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="wrap footer-grid">
       <div>
         <p class="footer-name">${esc(site.name)}</p>
@@ -96,8 +128,9 @@ function footer() {
       </div>
       <div>
         <h2>Contact</h2>
-        <p data-contact="email">Contact address to be announced.</p>
+        <p data-contact="email">${site.contact.email ? `<a href="mailto:${esc(site.contact.email)}">${esc(site.contact.email)}</a>` : 'Contact address to be announced.'}</p>
         <p data-contact="discussionUrl"></p>
+        <p><a href="contact.html">All contact details</a></p>
       </div>
       <div>
         <h2>Pages</h2>
