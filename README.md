@@ -117,11 +117,14 @@ Then visit http://localhost:8000/.
 
 ## Deploying
 
-1. Push the repository to the lab's GitHub account.
-2. In the repository, go to **Settings > Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`.
-3. The site appears at `https://<account>.github.io/` if the repository is named `<account>.github.io`, otherwise at `https://<account>.github.io/<repository>/`. All links are relative, so both work, and so does a custom domain (add a `CNAME` file).
+Repository: [respin-challenges/madst2027](https://github.com/respin-challenges/madst2027). Site address: https://respin-challenges.github.io/madst2027/
 
-The custom `404.html` detects whether the site is served from a domain root or a `/<repository>/` subpath, so its links and styles work in both cases.
+1. Push to `main`.
+2. In the repository, go to **Settings > Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`. Changes go live a minute or two after each push.
+3. Do not enable Pages before the ASLI 2027 challenge-proposal notification (17 Dec 2026): a live site presents MADST as an ASLI 2027 challenge.
+4. Once the site loads, uncomment the prepared MADST entry in `index.html` of [respin-challenges.github.io](https://github.com/respin-challenges/respin-challenges.github.io) so the RESPIN challenges page links to it.
+
+All links are relative, so the site also works at a domain root or under a custom domain (add a `CNAME` file). The custom `404.html` detects whether the site is served from a domain root or a `/<repository>/` subpath, so its links and styles work in both cases.
 
 ## Design notes
 
