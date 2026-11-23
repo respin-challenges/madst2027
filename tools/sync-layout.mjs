@@ -43,7 +43,7 @@ const NAV = [
 // url: null shows the logo without a link. alt is the organisation's name.
 const HOST_LOGO = { img: 'assets/img/asli.png', w: 211, h: 160, cls: 'logo-asli' };
 const ORGANISERS = [
-  { img: 'assets/img/iisc.png', w: 181, h: 160, name: 'Indian Institute of Science (IISc)', lines: ['IISc', 'Indian Institute of Science'], url: null, cls: 'logo-iisc' },
+  { img: 'assets/img/iisc.png', w: 181, h: 160, name: 'Indian Institute of Science (IISc)', lines: ['IISc', 'Indian Institute of Science'], url: 'https://www.iisc.ac.in/', cls: 'logo-iisc' },
   { img: 'assets/img/spire.png', w: 104, h: 160, name: 'SPIRE Lab', lines: ['SPIRE Lab', 'IISc'], url: 'https://spire.ee.iisc.ac.in/', cls: 'logo-spire' },
   { img: 'assets/img/respin.png', w: 246, h: 160, name: 'RESPIN', lines: ['RESPIN'], url: 'https://respin.iisc.ac.in/', cls: 'logo-respin' },
 ];

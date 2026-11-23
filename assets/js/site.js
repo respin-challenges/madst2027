@@ -88,7 +88,7 @@
 
   function showError(el, what, site) {
     var hint = location.protocol === 'file:'
-      ? ' This page was opened directly from disk; open it through a web server instead (see README).'
+      ? ' This page was opened directly from disk; open it through a web server instead, for example by running: python -m http.server'
       : ' Reload the page to try again.';
     var contact = site && site.contact && site.contact.email
       ? ' If the problem continues, email <a href="mailto:' + esc(site.contact.email) + '">' + esc(site.contact.email) + '</a>.'
