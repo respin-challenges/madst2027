@@ -1,0 +1,106 @@
+{
+  "_help": "Single source for every date on the site. date: YYYY-MM-DD or null (shown as 'to be announced'). time: 'HH:MM' in the site time zone (content/site.json) or null for whole-day events. status: confirmed | tentative. countdown: true lets the event appear as the next deadline. endDate: optional, for multi-day events.",
+  "events": [
+    {
+      "id": "challenge-opens",
+      "title": "Challenge opens",
+      "description": "Registration opens. Training and development data and baselines are released.",
+      "date": "2027-02-01",
+      "time": null,
+      "status": "confirmed",
+      "countdown": true,
+      "source": "ASLI 2027 important dates (challenge opening); release contents from the challenge proposal"
+    },
+    {
+      "id": "test-audio",
+      "title": "Test audio released",
+      "description": "Test audio is released without references.",
+      "date": "2027-05-03",
+      "time": null,
+      "status": "tentative",
+      "countdown": false,
+      "source": "Challenge proposal"
+    },
+    {
+      "id": "server-opens",
+      "title": "Evaluation server opens",
+      "description": null,
+      "date": null,
+      "time": null,
+      "status": "tentative",
+      "countdown": false,
+      "source": null,
+      "_NEED_THESE_DETAILS": "Opening date of the evaluation server."
+    },
+    {
+      "id": "submissions-close",
+      "title": "Submissions close",
+      "description": null,
+      "date": "2027-05-24",
+      "time": null,
+      "status": "tentative",
+      "countdown": true,
+      "source": "Challenge proposal",
+      "_NEED_THESE_DETAILS": "Closing time and time zone are not in the proposal. Shown as a whole-day date until confirmed."
+    },
+    {
+      "id": "system-descriptions",
+      "title": "System descriptions due",
+      "description": "Each team submits a system description.",
+      "date": null,
+      "time": null,
+      "status": "tentative",
+      "countdown": true,
+      "source": null,
+      "_NEED_THESE_DETAILS": "Deadline date, time and time zone."
+    },
+    {
+      "id": "results",
+      "title": "Results announced",
+      "description": null,
+      "date": "2027-05-31",
+      "time": null,
+      "status": "tentative",
+      "countdown": false,
+      "source": "Challenge proposal"
+    },
+    {
+      "id": "papers-due",
+      "title": "Challenge papers due",
+      "description": "Up to three pages of technical content plus one page of references, submitted to ASLI 2027.",
+      "date": "2027-06-17",
+      "time": "23:59",
+      "status": "confirmed",
+      "countdown": true,
+      "source": "ASLI 2027 important dates"
+    },
+    {
+      "id": "paper-notification",
+      "title": "Paper notification",
+      "description": null,
+      "date": "2027-07-28",
+      "time": null,
+      "status": "confirmed",
+      "countdown": false,
+      "source": "ASLI 2027 important dates"
+    },
+    {
+      "id": "conference",
+      "title": "ASLI 2027, Singapore",
+      "description": "Accepted challenge papers are presented in a dedicated session. The day of the session is not yet known.",
+      "date": "2027-11-29",
+      "endDate": "2027-12-04",
+      "time": null,
+      "status": "confirmed",
+      "countdown": false,
+      "source": "ASLI 2027"
+    }
+  ],
+  "_NEED_THESE_DETAILS": {
+    "removed_events": {
+      "registration-closes": "Not in the proposal. Add only if registration has a closing date.",
+      "camera-ready": "ASLI 2027 lists 'Paper Camera-ready Due: Aug 11, 2027' for papers generally. Confirm whether it applies to challenge papers before adding.",
+      "author-registration": "ASLI 2027 lists 'Author and Early Registration Due: Aug 27, 2027'. Confirm whether it applies to challenge papers before adding."
+    }
+  }
+}

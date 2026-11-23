@@ -1,0 +1,4 @@
+{
+  "_help": "One object per announcement. date: YYYY-MM-DD. category: Announcement | Data | Rules | Deadline | Results. body: plain text; blank line = new paragraph; [text](https://url) makes a link; **text** is bold. link/linkText optional. pinned: true keeps it first on the home page. Newest first is automatic.",
+  "items": []
+}

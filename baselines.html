@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baselines | MADST Challenge</title>
+  <meta name="description" content="Cascade and end-to-end baseline systems for both tasks and tracks of the MADST Challenge.">
+  <!-- layout:head -->
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
+  <!-- Indic-script fonts are added here automatically when SHOW_NATIVE is true in assets/js/site.js -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+  <!-- /layout:head -->
+</head>
+<body>
+  <!-- layout:header -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside id="deadline-strip" class="deadline-strip" aria-label="Next date" hidden><div class="wrap"></div></aside>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">MADST</span>
+        <span class="brand-host">Challenge at ASLI 2027</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html" aria-current="page">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /layout:header -->
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Baselines</h1>
+        <p class="lede">Two baseline systems for each task and track: a cascade and an end-to-end model. Recipes and model weights will be released when the challenge opens.</p>
+      </div>
+    </div>
+
+    <div class="wrap layout">
+      <nav class="toc" data-auto aria-label="On this page"></nav>
+      <div class="content">
+        <section>
+          <h2 id="systems">Systems</h2>
+          <dl class="facts">
+            <dt>Cascade</dt>
+            <dd>ASR, then machine translation with NLLB-200 or IndicTrans2, then TTS for speech-to-speech translation</dd>
+            <dt>End-to-end</dt>
+            <dd>A model fine-tuned from SeamlessM4T</dd>
+          </dl>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Baselines per task and track">
+            <table class="data">
+              <thead><tr><th scope="col">Task</th><th scope="col">Track</th><th scope="col">Baselines</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Speech-to-text</th><td>Constrained</td><td>Cascade (ASR, MT); end-to-end</td></tr>
+                <tr><th scope="row">Speech-to-text</th><td>Open</td><td>Cascade (ASR, MT); end-to-end</td></tr>
+                <tr><th scope="row">Speech-to-speech</th><td>Constrained</td><td>Cascade (ASR, MT, TTS); end-to-end</td></tr>
+                <tr><th scope="row">Speech-to-speech</th><td>Open</td><td>Cascade (ASR, MT, TTS); end-to-end</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="code">Code and weights</h2>
+          <p class="prose" data-link-missing="baselineCode">Recipes and model weights will be linked here on 1 February 2027.</p>
+          <!-- NEED THESE DETAILS: baseline code repository, model weight URLs, ASR and TTS models used in the cascade. -->
+          <p class="actions" style="margin-top:0"><a class="btn btn-primary" data-link="baselineCode" href="#" hidden>Baseline code</a></p>
+        </section>
+
+        <section>
+          <h2 id="scores">Development-set scores</h2>
+          <div class="state">
+            <strong>Not yet available.</strong>
+          </div>
+          <!-- NEED THESE DETAILS: baseline scores on the development set (task, track, system, primary and secondary metric). -->
+        </section>
+
+        <section>
+          <h2 id="tools">Related tools and models</h2>
+          <div class="prose">
+            <p>Models named in the challenge description. Which checkpoints are allowed in the constrained track is defined by the list published at launch, not by this page.</p>
+            <ul>
+              <li><a href="https://github.com/openai/whisper">Whisper</a></li>
+              <li><a href="https://github.com/facebookresearch/seamless_communication">SeamlessM4T</a></li>
+              <li><a href="https://github.com/facebookresearch/fairseq/tree/nllb">NLLB-200</a></li>
+              <li><a href="https://github.com/AI4Bharat/IndicTrans2">IndicTrans2</a></li>
+              <li><a href="https://github.com/facebookresearch/fairseq/tree/main/examples/mms">MMS</a></li>
+              <li><a href="https://github.com/mjpost/sacrebleu">sacreBLEU</a>, used for scoring</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="cite">Citation</h2>
+          <div class="callout callout-pending">
+            <p>To be announced.</p>
+          </div>
+          <!-- NEED THESE DETAILS: citation (BibTeX) for the challenge and dataset. -->
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- layout:footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">MADST Challenge</p>
+        <p>Multilingual any-direction speech translation across nine Indian languages.</p>
+        <p>A challenge at <a href="https://2027.ieeeasli.org/">ASLI 2027</a>, 29 November – 4 December 2027, Singapore.</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p data-contact="email">Contact address to be announced.</p>
+        <p data-contact="discussionUrl"></p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>Last updated <span data-last-updated>23 November 2026</span></span>
+      <span>Paper deadlines are 23:59 Anywhere on Earth (AoE), as set by ASLI 2027.</span>
+    </div>
+  </footer>
+  <!-- /layout:footer -->
+</body>
+</html>

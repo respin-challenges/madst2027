@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evaluation | MADST Challenge</title>
+  <meta name="description" content="How MADST Challenge systems are scored: chrF++ and BLEU for speech-to-text translation, ASR-chrF++ and predicted MOS for speech-to-speech translation.">
+  <!-- layout:head -->
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
+  <!-- Indic-script fonts are added here automatically when SHOW_NATIVE is true in assets/js/site.js -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+  <!-- /layout:head -->
+</head>
+<body>
+  <!-- layout:header -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside id="deadline-strip" class="deadline-strip" aria-label="Next date" hidden><div class="wrap"></div></aside>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">MADST</span>
+        <span class="brand-host">Challenge at ASLI 2027</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html" aria-current="page">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /layout:header -->
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Evaluation</h1>
+        <p class="lede">Systems are scored on all 72 directions. Each task has a constrained and an open leaderboard, ranked by a primary metric averaged over directions.</p>
+      </div>
+    </div>
+
+    <div class="wrap layout">
+      <nav class="toc" data-auto aria-label="On this page"></nav>
+      <div class="content">
+        <section>
+          <h2 id="summary">Metrics at a glance</h2>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Metrics">
+            <table class="data">
+              <thead><tr><th scope="col">Task</th><th scope="col">Primary metric</th><th scope="col">Also reported</th><th scope="col">Leaderboards</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Task 1: Speech-to-text</th><td>chrF++</td><td>BLEU</td><td>Constrained, open</td></tr>
+                <tr><th scope="row">Task 2: Speech-to-speech</th><td>ASR-chrF++</td><td>Predicted naturalness (MOS); human evaluation of top systems</td><td>Constrained, open</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="s2tt">Task 1: Speech-to-text translation</h2>
+          <div class="prose">
+            <p>System output text is compared with the human reference translation using <strong>chrF++</strong> (primary) and <strong>BLEU</strong>, both computed with <a href="https://github.com/mjpost/sacrebleu">sacreBLEU</a>. Scores are averaged over all directions, and per-direction scores are reported.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="s2st">Task 2: Speech-to-speech translation</h2>
+          <div class="prose">
+            <p>The primary metric is <strong>ASR-chrF++</strong>. System output speech is transcribed with the organisers’ ASR model for each target language, and the transcript is scored against the reference text with chrF++.</p>
+            <p>Running the same ASR on the human reference recordings gives a per-language reference point.</p>
+            <p>Predicted naturalness (MOS) is also reported. The top systems additionally receive a human evaluation.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="analysis">Analysis</h2>
+          <div class="prose">
+            <p>Results will be broken down by source language, by target language, and by whether the source sentence is an original or a translation.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="procedure">Submission and scoring</h2>
+          <div class="prose">
+            <p>Teams submit text (Task 1) or audio (Task 2) to an evaluation server, which has a daily submission limit. Each team also submits a system description. See <a href="participate.html#submit">how to submit</a>.</p>
+          </div>
+        </section>
+
+        <!-- NEED THESE DETAILS: sacreBLEU version and signature (incl. BLEU tokeniser for Indic scripts); text normalisation
+             before scoring; ASR models used for ASR-chrF++ and whether participants can access them; MOS predictor and whether it
+             affects ranking; how ASR-chrF++ is aggregated over directions; human evaluation protocol and number of systems;
+             ranking and tie-breaking rules. -->
+
+        <section>
+          <h2 id="scripts">Evaluation scripts</h2>
+          <p class="prose" data-link-missing="evaluationScripts">To be announced.</p>
+          <!-- NEED THESE DETAILS: evaluation script repository and when it is released (the proposal mentions evaluation
+               scripts being released for research after the challenge). -->
+          <p class="actions" style="margin-top:0"><a class="btn btn-secondary" data-link="evaluationScripts" href="#" hidden>Evaluation scripts</a></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- layout:footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">MADST Challenge</p>
+        <p>Multilingual any-direction speech translation across nine Indian languages.</p>
+        <p>A challenge at <a href="https://2027.ieeeasli.org/">ASLI 2027</a>, 29 November – 4 December 2027, Singapore.</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p data-contact="email">Contact address to be announced.</p>
+        <p data-contact="discussionUrl"></p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>Last updated <span data-last-updated>23 November 2026</span></span>
+      <span>Paper deadlines are 23:59 Anywhere on Earth (AoE), as set by ASLI 2027.</span>
+    </div>
+  </footer>
+  <!-- /layout:footer -->
+</body>
+</html>

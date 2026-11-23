@@ -1,0 +1,84 @@
+{
+  "name": "MADST Challenge",
+  "shortName": "MADST",
+  "fullName": "MADST: Multilingual Any-Direction Speech Translation Challenge",
+  "description": "Translate speech between any two of nine Indian languages, into text or directly into speech.",
+  "lastUpdated": "2026-11-23",
+  "host": {
+    "name": "ASLI 2027",
+    "fullName": "2027 IEEE International Conference on Audio, Speech, and Language Intelligence",
+    "dates": "29 November – 4 December 2027",
+    "city": "Singapore",
+    "url": "https://2027.ieeeasli.org/"
+  },
+  "timezone": {
+    "label": "AoE",
+    "name": "Anywhere on Earth",
+    "utcOffsetMinutes": -720,
+    "explainUrl": "https://www.timeanddate.com/time/zones/aoe",
+    "note": "Paper deadlines are 23:59 [Anywhere on Earth (AoE)](https://www.timeanddate.com/time/zones/aoe), as set by ASLI 2027.",
+    "_NEED_THESE_DETAILS": "Time zone and closing time for the challenge's own deadlines (e.g. submissions close) are not stated in the proposal."
+  },
+  "contact": {
+    "email": null,
+    "technicalEmail": null,
+    "discussionUrl": null,
+    "discussionLabel": null
+  },
+  "links": {
+    "registration": null,
+    "evaluationServer": null,
+    "dataAccess": null,
+    "baselineCode": null,
+    "evaluationScripts": null,
+    "constrainedCheckpoints": null,
+    "systemDescriptionTemplate": null,
+    "paperSubmission": null
+  },
+  "resources": [
+    {
+      "id": "traindev",
+      "label": "Training and development data",
+      "event": "challenge-opens",
+      "url": null
+    },
+    {
+      "id": "baselines",
+      "label": "Baseline recipes and model weights",
+      "event": "challenge-opens",
+      "url": null
+    },
+    {
+      "id": "checkpoints",
+      "label": "Constrained-track checkpoint list",
+      "event": null,
+      "url": null,
+      "expectedText": "At launch",
+      "_note": "Proposal: 'A fixed list of public checkpoints announced at launch'. No date given."
+    },
+    {
+      "id": "evalscripts",
+      "label": "Evaluation scripts",
+      "event": null,
+      "url": null
+    },
+    {
+      "id": "testaudio",
+      "label": "Test audio",
+      "event": "test-audio",
+      "url": null
+    },
+    {
+      "id": "server",
+      "label": "Evaluation server",
+      "event": "server-opens",
+      "url": null
+    },
+    {
+      "id": "results",
+      "label": "Results",
+      "event": "results",
+      "url": null
+    }
+  ]
+}

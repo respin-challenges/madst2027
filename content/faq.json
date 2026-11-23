@@ -1,0 +1,58 @@
+{
+  "_help": "Only questions with confirmed answers belong here. answer uses the same simple formatting as news (blank line = paragraph, [text](url) = link, **bold**). group is used to cluster questions.",
+  "items": [
+    {
+      "group": "The challenge",
+      "q": "Which languages and directions are evaluated?",
+      "a": "All 72 directions among Bengali, Bhojpuri, Chhattisgarhi, Hindi, Kannada, Magahi, Maithili, Marathi and Telugu, in both tasks. See [the challenge page](challenge.html#languages)."
+    },
+    {
+      "group": "The challenge",
+      "q": "Are the source and target languages given to the system?",
+      "a": "Yes. Source and target language IDs are provided."
+    },
+    {
+      "group": "The challenge",
+      "q": "What is the difference between the two tracks?",
+      "a": "The **constrained track** allows only the challenge training set and a fixed list of public checkpoints announced at launch. The **open track** allows the challenge data plus any public corpora and any public model; proprietary APIs are allowed only if declared. See [tracks](challenge.html#tracks)."
+    },
+    {
+      "group": "Rules",
+      "q": "Can I use Whisper, SeamlessM4T or IndicTrans2 in the constrained track?",
+      "a": "Only checkpoints on the fixed list are allowed in the constrained track. The list will be announced at launch."
+    },
+    {
+      "group": "Rules",
+      "q": "Can I use a proprietary API, such as a commercial speech or language model?",
+      "a": "Only in the open track, and only if its use is declared."
+    },
+    {
+      "group": "Submission",
+      "q": "How many submissions can I make?",
+      "a": "Submissions go to an evaluation server with a daily limit.",
+      "_NEED_THESE_DETAILS": "The daily limit value."
+    },
+    {
+      "group": "Submission",
+      "q": "Do I need to describe my system?",
+      "a": "Yes. Each team submits a system description.",
+      "_NEED_THESE_DETAILS": "Format, length and deadline of the system description."
+    },
+    {
+      "group": "Papers",
+      "q": "Where are challenge papers published?",
+      "a": "Accepted challenge papers are presented in a dedicated session at [ASLI 2027](https://2027.ieeeasli.org/) in Singapore and published in IEEE Xplore as part of the ASLI 2027 Challenge & Demo Proceedings."
+    },
+    {
+      "group": "Papers",
+      "q": "How long can a challenge paper be?",
+      "a": "Up to three pages of technical content, plus one additional page for references. Challenge papers are reviewed single-blind, on a timeline separate from regular ASLI papers. Papers are due on 17 June 2027."
+    },
+    {
+      "group": "After the challenge",
+      "q": "Will the data be available after the challenge?",
+      "a": "Yes. The data, baselines and evaluation scripts will be released for research after the challenge.",
+      "_NEED_THESE_DETAILS": "Licence of the released data."
+    }
+  ]
+}

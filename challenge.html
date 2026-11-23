@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The challenge | MADST Challenge</title>
+  <meta name="description" content="Motivation, languages, tasks and tracks of the MADST Challenge on multilingual any-direction speech translation across nine Indian languages.">
+  <!-- layout:head -->
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
+  <!-- Indic-script fonts are added here automatically when SHOW_NATIVE is true in assets/js/site.js -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+  <!-- /layout:head -->
+</head>
+<body>
+  <!-- layout:header -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside id="deadline-strip" class="deadline-strip" aria-label="Next date" hidden><div class="wrap"></div></aside>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">MADST</span>
+        <span class="brand-host">Challenge at ASLI 2027</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="challenge.html" aria-current="page">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /layout:header -->
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>The challenge</h1>
+        <p class="lede">How well can current models be adapted, with limited parallel data, to translate speech between any two of nine Indian languages, into text or directly into speech?</p>
+      </div>
+    </div>
+
+    <div class="wrap layout">
+      <nav class="toc" data-auto aria-label="On this page"></nav>
+      <div class="content">
+        <section>
+          <h2 id="motivation">Motivation</h2>
+          <div class="prose">
+            <p>Multilingual foundation models such as Whisper, SeamlessM4T and speech-capable large language models have made speech translation possible for many languages, but evaluation remains centred on English. Most Indian speech translation resources pair an Indian language with English, although translation between Indian languages is the more common need in India.</p>
+            <p>Bhojpuri, Chhattisgarhi, Magahi and Maithili have over 90 million speakers together (Census of India 2011).</p>
+            <!-- NEED THESE DETAILS: the proposal also says these four languages "have no public speech translation corpus apart from
+                 a small Bhojpuri-Hindi set" and that "their text MT support comes only from general multilingual models such as NLLB-200".
+                 Removed pending verification. The survey found Bhojpuri->Hindi speech translation data in the IWSLT 2024-2026
+                 low-resource track (about 25-26 h), Bhojpuri and Magahi in a WAT 2025 dialect speech-to-speech study, and a
+                 Maithili-Hindi text parallel corpus (MaitH 1.0, LREC 2026). See reference_docs/ASLI2027_benchmark_survey.txt. -->
+            <p>The MADST Challenge builds on the <a href="https://respin.iisc.ac.in/">RESPIN</a> initiative and its two ASR challenges, MADASR at ASRU 2023 and MADASR 2.0 at ASRU 2025.</p>
+            <!-- NEED THESE DETAILS: the proposal says RESPIN's corpora and both ASR challenges "cover the same languages". The MADASR 2023
+                 website lists Bengali and Bhojpuri; the MADASR 2.0 (2025) website lists eight languages without Hindi. Please confirm the wording. -->
+          </div>
+        </section>
+
+        <section>
+          <h2 id="languages">Languages and directions</h2>
+          <div class="prose">
+            <p>Nine languages are included. Every ordered pair of different languages is a translation direction, giving 72 directions, and all of them are evaluated. Source and target language IDs are provided.</p>
+          </div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Languages">
+            <table class="data">
+              <caption>Language codes used in the challenge.</caption>
+              <thead><tr><th scope="col">Language</th><th scope="col">Code</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Bengali</th><td>bn</td></tr>
+                <tr><th scope="row">Bhojpuri</th><td>bh</td></tr>
+                <tr><th scope="row">Chhattisgarhi</th><td>ch</td></tr>
+                <tr><th scope="row">Hindi</th><td>hi</td></tr>
+                <tr><th scope="row">Kannada</th><td>kn</td></tr>
+                <tr><th scope="row">Magahi</th><td>mg</td></tr>
+                <tr><th scope="row">Maithili</th><td>mt</td></tr>
+                <tr><th scope="row">Marathi</th><td>mr</td></tr>
+                <tr><th scope="row">Telugu</th><td>te</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- NEED THESE DETAILS: native-script names for each language (confirm spellings; Maithili in Devanagari and/or Tirhuta?).
+               Removed until confirmed. Once confirmed, add a column here and set SHOW_NATIVE = true in assets/js/site.js. -->
+          <!-- NEED THESE DETAILS: which of the nine languages appear in existing speech translation benchmarks. No claim is shown
+               until the organisers confirm. Evidence collected so far: reference_docs/ASLI2027_benchmark_survey.txt. -->
+          <p class="small" style="margin-top:var(--s-4)">The <a href="index.html">home page</a> shows all 72 directions as a matrix.</p>
+          <!-- Note: the HTML lang attributes in assets/js/site.js keep standard language tags (bho, hne, mag, mai) for screen
+               readers, because the challenge codes bh, ch, mg and mt are the ISO 639-1 codes of other languages. -->
+        </section>
+
+        <section>
+          <h2 id="tasks">Tasks</h2>
+          <div class="prose">
+            <p>Given an utterance and a target language, a system translates the utterance into that language. The two tasks have equal weight.</p>
+          </div>
+          <dl class="facts">
+            <dt>Task 1</dt>
+            <dd>Speech-to-text translation (S2TT). Output target-language text.</dd>
+            <dt>Task 2</dt>
+            <dd>Speech-to-speech translation (S2ST). Output target-language speech.</dd>
+          </dl>
+          <!-- NEED THESE DETAILS: may a team enter only one task? Are partial submissions (some directions only) scored?
+               What does "the two tasks have equal weight" mean for participants (e.g. combined ranking)? -->
+        </section>
+
+        <section>
+          <h2 id="tracks">Tracks</h2>
+          <div class="prose">
+            <p>Each task has one leaderboard per track. The constrained track compares adaptation methods on equal resources; the open track measures what current resources can achieve.</p>
+          </div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Tracks">
+            <table class="data">
+              <thead><tr><th scope="col">Track</th><th scope="col">Training data</th><th scope="col">Pretrained models and external resources</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Constrained</th><td>Challenge training set only</td><td>A fixed list of public checkpoints announced at launch, for example Whisper, MMS, SeamlessM4T, IndicTrans2 and NLLB-200</td></tr>
+                <tr><th scope="row">Open</th><td>Challenge data plus any public corpora, for example RESPIN-S1.0 and SYSPIN</td><td>Any public model; proprietary APIs only if declared</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small" style="margin-top:var(--s-4)">
+            <a data-link="constrainedCheckpoints" href="#" hidden>See the constrained-track checkpoint list</a>
+            <span data-link-missing="constrainedCheckpoints">The constrained-track checkpoint list will be announced at launch.</span>
+            <!-- NEED THESE DETAILS: the constrained-track checkpoint list (model name + exact checkpoint ID). -->
+          </p>
+        </section>
+
+        <section>
+          <h2 id="outcomes">Expected outcomes</h2>
+          <div class="prose">
+            <ul>
+              <li>A public many-to-many benchmark with human reference text and speech in all 72 directions.</li>
+              <!-- NEED THESE DETAILS: the proposal adds "that includes four languages absent from existing speech translation benchmarks".
+                   Removed: Bhojpuri->Hindi is an IWSLT 2024-2026 shared-task pair. See reference_docs/ASLI2027_benchmark_survey.txt. -->
+              <li>Evidence on cascade, end-to-end and speech-LLM approaches for languages with weak machine translation support.</li>
+              <li>Released data, baselines and evaluation scripts for research after the challenge.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="previous">Previous challenges</h2>
+          <div class="prose">
+            <p>MADST follows two ASR challenges on RESPIN data:</p>
+            <ul>
+              <li><a href="https://sites.google.com/view/respinasrchallenge2023/home">MADASR, ASRU 2023</a></li>
+              <li><a href="https://sites.google.com/view/respinasrchallenge2025/home">MADASR 2.0, ASRU 2025</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="references">References</h2>
+          <ol class="prose" style="font-size:var(--step-0)">
+            <li>A. Radford, J. W. Kim, T. Xu, G. Brockman, C. McLeavey and I. Sutskever, “Robust speech recognition via large-scale weak supervision,” in <i>Proc. ICML</i>, PMLR vol. 202, 2023, pp. 28492–28518.</li>
+            <li>Seamless Communication Team, “Joint speech and text machine translation for up to 100 languages,” <i>Nature</i>, vol. 637, pp. 587–593, 2025. <a href="https://doi.org/10.1038/s41586-024-08359-z">doi:10.1038/s41586-024-08359-z</a></li>
+            <li>A. Sankar et al., “Towards building large scale datasets and state-of-the-art automatic speech translation systems for 14 Indian languages,” in <i>Proc. ACL</i>, 2025, pp. 32945–32966. <a href="https://doi.org/10.18653/v1/2025.acl-long.1582">doi:10.18653/v1/2025.acl-long.1582</a></li>
+            <li>NLLB Team, “Scaling neural machine translation to 200 languages,” <i>Nature</i>, vol. 630, pp. 841–846, 2024. <a href="https://doi.org/10.1038/s41586-024-07335-x">doi:10.1038/s41586-024-07335-x</a></li>
+            <li>S. Kumar et al., “RESPIN-S1.0: A read speech corpus of 10000+ hours in dialects of nine Indian languages,” in <i>Proc. NeurIPS Datasets and Benchmarks Track</i>, 2025. <a href="https://doi.org/10.52202/085713-4928">doi:10.52202/085713-4928</a></li>
+            <li>J. Gala et al., “IndicTrans2: Towards high-quality and accessible machine translation models for all 22 scheduled Indian languages,” <i>Transactions on Machine Learning Research</i>, 2023. <a href="https://openreview.net/forum?id=vfT4YuzAYA">openreview.net/forum?id=vfT4YuzAYA</a></li>
+          </ol>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- layout:footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">MADST Challenge</p>
+        <p>Multilingual any-direction speech translation across nine Indian languages.</p>
+        <p>A challenge at <a href="https://2027.ieeeasli.org/">ASLI 2027</a>, 29 November – 4 December 2027, Singapore.</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p data-contact="email">Contact address to be announced.</p>
+        <p data-contact="discussionUrl"></p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>Last updated <span data-last-updated>23 November 2026</span></span>
+      <span>Paper deadlines are 23:59 Anywhere on Earth (AoE), as set by ASLI 2027.</span>
+    </div>
+  </footer>
+  <!-- /layout:footer -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "_help": "Fill 'entries' only with official results. Each entry: rank, team, affiliation (or null), system, primary, secondary (object of metric name -> value), isBaseline (true for organiser reference rows). 'directions' holds per-direction primary scores for the matrix view, keyed by challenge language codes: { \"bn-hi\": 41.2, ... } using bn bh ch hi kn mg mt mr te. 'directionsLabel' says which system the per-direction scores belong to.",
+  "published": false,
+  "note": null,
+  "boards": [
+    {
+      "id": "s2tt-constrained",
+      "task": "Task 1: Speech-to-text translation",
+      "track": "Constrained track",
+      "primary": "chrF++",
+      "secondary": [
+        "BLEU"
+      ],
+      "entries": [],
+      "directions": {},
+      "aggregation": "averaged over all directions",
+      "directionsLabel": null
+    },
+    {
+      "id": "s2tt-open",
+      "task": "Task 1: Speech-to-text translation",
+      "track": "Open track",
+      "primary": "chrF++",
+      "secondary": [
+        "BLEU"
+      ],
+      "entries": [],
+      "directions": {},
+      "aggregation": "averaged over all directions",
+      "directionsLabel": null
+    },
+    {
+      "id": "s2st-constrained",
+      "task": "Task 2: Speech-to-speech translation",
+      "track": "Constrained track",
+      "primary": "ASR-chrF++",
+      "secondary": [
+        "Predicted naturalness (MOS)"
+      ],
+      "entries": [],
+      "directions": {},
+      "aggregation": null,
+      "_NEED_THESE_DETAILS": "How ASR-chrF++ is aggregated over directions, whether MOS or human evaluation affects ranking.",
+      "directionsLabel": null
+    },
+    {
+      "id": "s2st-open",
+      "task": "Task 2: Speech-to-speech translation",
+      "track": "Open track",
+      "primary": "ASR-chrF++",
+      "secondary": [
+        "Predicted naturalness (MOS)"
+      ],
+      "entries": [],
+      "directions": {},
+      "aggregation": null,
+      "_NEED_THESE_DETAILS": "How ASR-chrF++ is aggregated over directions, whether MOS or human evaluation affects ranking.",
+      "directionsLabel": null
+    }
+  ],
+  "_NEED_THESE_DETAILS": "Ranking and tie-breaking rules; whether a live leaderboard is shown during the submission window."
+}

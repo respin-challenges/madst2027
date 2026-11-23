@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Participate | MADST Challenge</title>
+  <meta name="description" content="How to take part in the MADST Challenge: registration, rules, submission, system descriptions and challenge papers at ASLI 2027.">
+  <!-- layout:head -->
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
+  <!-- Indic-script fonts are added here automatically when SHOW_NATIVE is true in assets/js/site.js -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+  <!-- /layout:head -->
+</head>
+<body>
+  <!-- layout:header -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside id="deadline-strip" class="deadline-strip" aria-label="Next date" hidden><div class="wrap"></div></aside>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">MADST</span>
+        <span class="brand-host">Challenge at ASLI 2027</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html" aria-current="page">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /layout:header -->
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Participate</h1>
+        <p class="lede">From registration to a paper at ASLI 2027, in the order you will need it.</p>
+      </div>
+    </div>
+
+    <div class="wrap layout">
+      <nav class="toc" data-auto aria-label="On this page"></nav>
+      <div class="content">
+        <section>
+          <h2 id="steps">Steps</h2>
+          <ol class="steps">
+            <li id="register">
+              <div>
+                <h3>Register your team</h3>
+                <div class="prose">
+                  <p>Registration opens on 1 February 2027.</p>
+                  <p data-link-missing="registration">Registration method: to be announced.</p>
+                  <!-- NEED THESE DETAILS: registration URL and what teams provide when registering. -->
+                  <p><a class="btn btn-primary" data-link="registration" href="#" hidden>Register your team</a></p>
+                </div>
+              </div>
+            </li>
+            <li id="get-data">
+              <div>
+                <h3>Get the data and baselines</h3>
+                <div class="prose">
+                  <p>Training and development data, baseline recipes and model weights are released when the challenge opens. See <a href="data.html">data</a> and <a href="baselines.html">baselines</a>.</p>
+                </div>
+              </div>
+            </li>
+            <li id="build">
+              <div>
+                <h3>Build your system</h3>
+                <div class="prose">
+                  <p>Choose a task and a track. In the constrained track, use only the challenge training set and the published list of checkpoints. See <a href="challenge.html#tracks">tracks</a> and the <a href="#rules">rules</a> below.</p>
+                </div>
+              </div>
+            </li>
+            <li id="submit">
+              <div>
+                <h3>Submit outputs</h3>
+                <div class="prose">
+                  <p>Test audio is released without references on 3 May 2027 (tentative). Submit text (Task 1) or audio (Task 2) to the evaluation server, which has a daily submission limit. Submissions close on 24 May 2027 (tentative).</p>
+                  <!-- NEED THESE DETAILS: closing time and time zone for submissions. -->
+                  <p data-link-missing="evaluationServer">Server address, submission format and daily limit: to be announced.</p>
+                  <!-- NEED THESE DETAILS: evaluation server platform and URL, opening date, daily and total submission limits,
+                       S2TT and S2ST file formats, primary/final system selection rule. -->
+                  <p><a class="btn btn-primary" data-link="evaluationServer" href="#" hidden>Go to the evaluation server</a></p>
+                </div>
+              </div>
+            </li>
+            <li id="system-description">
+              <div>
+                <h3>Describe your system</h3>
+                <div class="prose">
+                  <p>Each team submits a system description. Format, length and deadline: to be announced.</p>
+                  <!-- NEED THESE DETAILS: system description format, length, template and deadline. -->
+                  <p><a data-link="systemDescriptionTemplate" href="#" hidden>System description template</a></p>
+                </div>
+              </div>
+            </li>
+            <li id="paper">
+              <div>
+                <h3>Write a challenge paper</h3>
+                <div class="prose">
+                  <p>Challenge papers are submitted to <a href="https://2027.ieeeasli.org/">ASLI 2027</a>. They are limited to three pages of technical content plus one page for references, and are reviewed single-blind on a timeline separate from regular papers.</p>
+                  <p>Papers are due on 17 June 2027; notification is on 28 July 2027. Accepted papers are presented in a dedicated session in Singapore and published in IEEE Xplore as part of the ASLI 2027 Challenge &amp; Demo Proceedings.</p>
+                  <p><a data-link="paperSubmission" href="#" hidden>Paper submission site</a></p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 id="rules">Rules</h2>
+          <h3>Tracks</h3>
+          <div class="prose">
+            <ul>
+              <li><strong>Constrained:</strong> training uses the challenge training set only. Pretrained models are limited to the fixed list of public checkpoints announced when the challenge opens.</li>
+              <li><strong>Open:</strong> the challenge data plus any public corpora, and any public model. Proprietary APIs may be used only if declared.</li>
+            </ul>
+          </div>
+          <h3>Teams and submissions</h3>
+          <div class="callout callout-pending">
+            <p>To be announced.</p>
+          </div>
+          <!-- NEED THESE DETAILS: team size; one team per person?; participation by organisers' labs; industry teams;
+               whether a system description/paper is required to appear in final results; use of test audio for adaptation;
+               manual intervention rules. -->
+        </section>
+        <!-- NEED THESE DETAILS: privacy note for registration data (what is collected, why, who sees it, how long it is kept),
+             if the registration form collects personal data. Section removed until provided. -->
+
+        <section>
+          <h2 id="help">Questions</h2>
+          <div class="prose">
+            <p>Check the <a href="faq.html">FAQ</a> first. Contact: <span data-contact="email">contact address to be announced</span>.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- layout:footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">MADST Challenge</p>
+        <p>Multilingual any-direction speech translation across nine Indian languages.</p>
+        <p>A challenge at <a href="https://2027.ieeeasli.org/">ASLI 2027</a>, 29 November – 4 December 2027, Singapore.</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p data-contact="email">Contact address to be announced.</p>
+        <p data-contact="discussionUrl"></p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>Last updated <span data-last-updated>23 November 2026</span></span>
+      <span>Paper deadlines are 23:59 Anywhere on Earth (AoE), as set by ASLI 2027.</span>
+    </div>
+  </footer>
+  <!-- /layout:footer -->
+</body>
+</html>

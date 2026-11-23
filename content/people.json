@@ -1,0 +1,6 @@
+{
+  "_help": "Each person: name, affiliation, role (optional), url (optional). Order here is the order on the site. Leave a list empty to show 'to be announced'.",
+  "organisers": [],
+  "committee": [],
+  "sponsors": []
+}

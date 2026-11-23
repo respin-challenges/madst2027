@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MADST Challenge at ASLI 2027: Multilingual Any-Direction Speech Translation</title>
+  <meta name="description" content="Translate speech between any two of nine Indian languages, into text or directly into speech. A challenge at ASLI 2027, Singapore.">
+  <meta property="og:title" content="MADST Challenge at ASLI 2027">
+  <meta property="og:description" content="Multilingual any-direction speech translation across nine Indian languages: 72 directions, speech-to-text and speech-to-speech.">
+  <meta property="og:type" content="website">
+  <!-- layout:head -->
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
+  <!-- Indic-script fonts are added here automatically when SHOW_NATIVE is true in assets/js/site.js -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+  <!-- /layout:head -->
+</head>
+<body>
+  <!-- layout:header -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside id="deadline-strip" class="deadline-strip" aria-label="Next date" hidden><div class="wrap"></div></aside>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-current="page">
+        <span class="brand-name">MADST</span>
+        <span class="brand-host">Challenge at ASLI 2027</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /layout:header -->
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="hero-kicker">A challenge at <a href="https://2027.ieeeasli.org/">ASLI 2027</a>, Singapore</p>
+          <h1>Multilingual Any-Direction Speech Translation</h1>
+          <p class="lede">Translate speech between any two of nine Indian languages, into text or directly into speech, with limited parallel data.</p>
+          <div class="actions">
+            <a class="btn btn-primary" data-link="registration" href="participate.html#register" hidden>Register your team</a>
+            <a class="btn btn-primary" href="challenge.html">Read the challenge</a>
+            <a class="btn btn-secondary" href="dates.html">Key dates</a>
+          </div>
+          <p class="note" data-link-missing="registration">Registration opens when the challenge opens on 1 February 2027.</p>
+        </div>
+        <div data-render="matrix" data-animate aria-busy="true">
+          <p class="loading">Loading the direction matrix.</p>
+          <noscript><p class="small">All 72 directions among Bengali, Bhojpuri, Chhattisgarhi, Hindi, Kannada, Magahi, Maithili, Marathi and Telugu are evaluated.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="tasks-h">
+      <div class="wrap">
+        <div class="band-head">
+          <h2 id="tasks-h">Two tasks, two tracks</h2>
+          <a href="challenge.html#tasks">Tasks and tracks in detail</a>
+        </div>
+        <div class="split">
+          <div class="task">
+            <span class="task-id">Task 1</span>
+            <h3>Speech-to-text translation</h3>
+            <p>Given an utterance and a target language, output a translation as target-language text.</p>
+          </div>
+          <div class="task">
+            <span class="task-id">Task 2</span>
+            <h3>Speech-to-speech translation</h3>
+            <p>Given an utterance and a target language, output a translation as target-language speech.</p>
+          </div>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Tracks">
+          <table class="data">
+            <caption>Each task has one leaderboard per track. The two tasks have equal weight.</caption>
+            <thead>
+              <tr><th scope="col">Track</th><th scope="col">Training data</th><th scope="col">Pretrained models and external resources</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Constrained</th><td>Challenge training set only</td><td>A fixed list of public checkpoints, announced at launch</td></tr>
+              <tr><th scope="row">Open</th><td>Challenge data plus any public corpora</td><td>Any public model; proprietary APIs only if declared</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="dates-h">
+      <div class="wrap">
+        <div class="band-head">
+          <h2 id="dates-h">Key dates</h2>
+          <a href="dates.html">Full timeline</a>
+        </div>
+        <div class="key-dates">
+          <div data-render="countdown" aria-busy="true"><p class="loading">Loading the next date.</p></div>
+          <div data-render="timeline" data-mode="upcoming" data-limit="5" aria-busy="true">
+            <p class="loading">Loading dates.</p>
+            <noscript><p class="small">See the <a href="dates.html">dates page</a>.</p></noscript>
+          </div>
+        </div>
+        <p class="small" style="margin-top:var(--s-4)" data-tz>Paper deadlines are 23:59 Anywhere on Earth (AoE), as set by ASLI 2027.</p>
+        <!-- NEED THESE DETAILS: time zone and closing time for the challenge's own deadlines (e.g. submissions close on 24 May). -->
+
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="status-h">
+      <div class="wrap">
+        <div class="band-head">
+          <h2 id="status-h">What is released</h2>
+          <a href="baselines.html">Baselines and tools</a>
+        </div>
+        <div data-render="status" aria-busy="true"><p class="loading">Loading release status.</p></div>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="news-h">
+      <div class="wrap">
+        <div class="band-head">
+          <h2 id="news-h">Latest news</h2>
+          <a href="news.html">All announcements</a>
+        </div>
+        <div data-render="news" data-limit="3" data-compact aria-busy="true">
+          <p class="loading">Loading announcements.</p>
+          <noscript><p class="small">See the <a href="news.html">news page</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- layout:footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">MADST Challenge</p>
+        <p>Multilingual any-direction speech translation across nine Indian languages.</p>
+        <p>A challenge at <a href="https://2027.ieeeasli.org/">ASLI 2027</a>, 29 November – 4 December 2027, Singapore.</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p data-contact="email">Contact address to be announced.</p>
+        <p data-contact="discussionUrl"></p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>Last updated <span data-last-updated>23 November 2026</span></span>
+      <span>Paper deadlines are 23:59 Anywhere on Earth (AoE), as set by ASLI 2027.</span>
+    </div>
+  </footer>
+  <!-- /layout:footer -->
+</body>
+</html>

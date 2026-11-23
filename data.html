@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data | MADST Challenge</title>
+  <meta name="description" content="The MADST Challenge corpus: newly recorded read speech in nine Indian languages with human translations and human reference speech.">
+  <!-- layout:head -->
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
+  <!-- Indic-script fonts are added here automatically when SHOW_NATIVE is true in assets/js/site.js -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+  <!-- /layout:head -->
+</head>
+<body>
+  <!-- layout:header -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <aside id="deadline-strip" class="deadline-strip" aria-label="Next date" hidden><div class="wrap"></div></aside>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">MADST</span>
+        <span class="brand-host">Challenge at ASLI 2027</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html" aria-current="page">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /layout:header -->
+
+  <main id="main">
+    <div class="page-head">
+      <div class="wrap">
+        <h1>Data</h1>
+        <p class="lede">Newly recorded read speech in nine languages, with human translations of every sentence and human reference speech for every development and test direction.</p>
+      </div>
+    </div>
+
+    <div class="wrap layout">
+      <nav class="toc" data-auto aria-label="On this page"></nav>
+      <div class="content">
+        <section>
+          <h2 id="overview">At a glance</h2>
+          <dl class="facts">
+            <dt>Original sentences</dt>
+            <dd>About 20,500, between 2,000 and 3,000 per language, in standard dialects</dd>
+            <dt>Human translations</dt>
+            <dd>Over 140,000, from each original into the other eight languages</dd>
+            <dt>Speakers</dt>
+            <dd>270, 30 per language, balanced by gender</dd>
+            <dt>Utterances</dt>
+            <dd>81,000 newly recorded read-speech utterances, 300 sentences per speaker</dd>
+            <dt>Hours of speech</dt>
+            <dd class="muted">To be announced</dd>
+          </dl>
+          <!-- NEED THESE DETAILS: total hours of speech; exact number of translations (proposal says "over 140,000", but
+               20,500 originals x 8 languages is about 164,000); per language 30 x 300 = 9,000 utterances but
+               train 4,200 + dev 1,800 + test 2,700 = 8,700 - please confirm the split sizes. -->
+        </section>
+
+        <section>
+          <h2 id="groups">Sentence groups</h2>
+          <div class="prose">
+            <p>A <strong>group</strong> is one original sentence together with all of its translations. A group always stays in one split, so no sentence, in any language, appears in both training and test data. No speaker appears in more than one split.</p>
+            <p>Every development and test group is recorded in all nine languages. Each direction therefore has human reference text and human reference speech for every development and test sentence. Many training groups are also recorded in several languages, giving real speech-to-speech pairs.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="splits">Splits</h2>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Data splits">
+            <table class="data">
+              <thead>
+                <tr><th scope="col">Split</th><th scope="col">Size</th><th scope="col">Per direction</th><th scope="col">References</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Training</th><td>4,200 utterances per language from 14 speakers, each paired with its translations</td><td class="muted">To be announced<!-- NEED THESE DETAILS: training size per direction (number of real speech-to-speech pairs). --></td><td>Released with references</td></tr>
+                <tr><th scope="row">Development</th><td>200 groups per source language</td><td class="num">1,800 sentences</td><td>Released with reference text and speech</td></tr>
+                <tr><th scope="row">Test</th><td>300 groups per source language</td><td class="num">2,700 sentences</td><td>Audio only; references withheld</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="release">Release schedule</h2>
+          <div data-render="timeline" data-ids="challenge-opens,test-audio" aria-busy="true">
+            <p class="loading">Loading dates.</p>
+            <noscript><p class="small">Training and development data: 1 February 2027. Test audio: 3 May 2027 (tentative).</p></noscript>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="access">Access</h2>
+          <p class="prose" data-link-missing="dataAccess">To be announced.</p>
+          <!-- NEED THESE DETAILS: how participants obtain the data (steps, URL, hosting, whether an agreement must be signed). -->
+          <p class="actions" style="margin-top:0"><a class="btn btn-primary" data-link="dataAccess" href="#" hidden>Get the data</a></p>
+        </section>
+
+        <section>
+          <h2 id="licence">Licence and terms of use</h2>
+          <div class="callout callout-pending">
+            <p>To be announced. The data will be released for research after the challenge.</p>
+          </div>
+          <!-- NEED THESE DETAILS: licence during and after the challenge, and terms of use. -->
+        </section>
+
+        <section>
+          <h2 id="formats">Formats</h2>
+          <div class="callout callout-pending">
+            <p>To be announced.</p>
+          </div>
+          <!-- NEED THESE DETAILS: audio format and sample rate, text encoding, directory layout, metadata fields. -->
+        </section>
+
+        <section>
+          <h2 id="related">Related corpora</h2>
+          <div class="prose">
+            <p>Open-track systems may use any public corpora. The challenge description names these as examples:</p>
+            <ul>
+              <li><strong>RESPIN-S1.0</strong>, a read speech corpus of over 10,000 hours in dialects of nine Indian languages (Kumar et al., NeurIPS 2025 Datasets and Benchmarks Track, <a href="https://doi.org/10.52202/085713-4928">doi:10.52202/085713-4928</a>). See also the <a href="https://respin.iisc.ac.in/">RESPIN project</a>.</li>
+              <li><strong>SYSPIN</strong>.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- layout:footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">MADST Challenge</p>
+        <p>Multilingual any-direction speech translation across nine Indian languages.</p>
+        <p>A challenge at <a href="https://2027.ieeeasli.org/">ASLI 2027</a>, 29 November – 4 December 2027, Singapore.</p>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p data-contact="email">Contact address to be announced.</p>
+        <p data-contact="discussionUrl"></p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="challenge.html">Challenge</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="evaluation.html">Evaluation</a></li>
+          <li><a href="baselines.html">Baselines</a></li>
+          <li><a href="participate.html">Participate</a></li>
+          <li><a href="dates.html">Dates</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="organisers.html">Organisers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>Last updated <span data-last-updated>23 November 2026</span></span>
+      <span>Paper deadlines are 23:59 Anywhere on Earth (AoE), as set by ASLI 2027.</span>
+    </div>
+  </footer>
+  <!-- /layout:footer -->
+</body>
+</html>
