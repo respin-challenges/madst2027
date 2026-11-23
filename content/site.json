@@ -3,7 +3,7 @@
   "shortName": "MADST",
   "fullName": "MADST: Multilingual Any-Direction Speech Translation Challenge across Nine Indian Languages",
   "description": "Translate speech between any two of nine Indian languages, into text or directly into speech.",
-  "lastUpdated": "2026-11-23",
+  "lastUpdated": "2026-11-24",
   "host": {
     "name": "ASLI 2027",
     "fullName": "2027 IEEE International Conference on Audio, Speech, and Language Intelligence",

@@ -159,6 +159,39 @@ a:hover { color: var(--indigo-900); text-decoration-thickness: 2px; }
 .deadline-strip .tag { color: #c8cce0; border-color: #5a6080; }
 
 /* ---------- Header ---------- */
+/* Logo bar: host conference left, organisers right. Scrolls away; the
+   menu below stays pinned. */
+.logo-bar { background: var(--surface); border-bottom: 1px solid var(--rule-soft); }
+.logo-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding-block: var(--s-3);
+}
+.logo { display: flex; align-items: center; gap: var(--s-3); line-height: 1.2; color: var(--ink); text-decoration: none; border-radius: var(--radius); }
+.logo img { height: 3.25rem; width: auto; flex: none; }
+.logo-text { display: flex; flex-direction: column; font-size: var(--step--1); color: var(--ink-2); white-space: nowrap; }
+.logo-text-main { font-size: var(--step-0); font-weight: 600; color: var(--ink); }
+.logo-orgs { list-style: none; padding: 0; margin: 0; display: flex; align-items: center; }
+.logo-orgs li { display: flex; align-items: center; padding-inline: var(--s-5); }
+.logo-orgs li:last-child { padding-right: 0; }
+.logo-orgs li + li { border-left: 1px solid var(--rule-soft); }
+.logo-respin img { height: 2.75rem; }
+a.logo:hover .logo-text-main { color: var(--indigo-900); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
+a.logo:hover img { opacity: 0.88; }
+@media (max-width: 1023px) {
+  .logo-orgs .logo-text { display: none; }
+  .logo-orgs li { padding-inline: var(--s-4); }
+}
+@media (max-width: 559px) {
+  .logo-bar-inner { padding-block: var(--s-2); }
+  .logo .logo-text { display: none; }
+  .logo img { height: 2rem; }
+  .logo-respin img { height: 1.625rem; }
+  .logo-orgs li { padding-inline: var(--s-3); }
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -462,10 +495,7 @@ table.data tr:last-child > * { border-bottom-color: var(--rule); }
 @media (min-width: 1024px) {
   .hero-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--s-8); }
 }
-.hero-host { display: flex; align-items: center; gap: var(--s-4); margin-bottom: var(--s-5); }
-.hero-host-logo { flex: none; display: block; line-height: 0; border-radius: var(--radius); }
-.hero-host-logo img { height: 4rem; width: auto; }
-.hero-kicker { font-size: var(--step-0); color: var(--ink-2); }
+.hero-kicker { font-size: var(--step-0); color: var(--ink-2); margin-bottom: var(--s-4); max-width: 34rem; }
 .hero-kicker a { color: inherit; }
 .hero h1 {
   font-size: clamp(2rem, 1.3rem + 2.6vw, var(--step-5));
@@ -754,15 +784,6 @@ table.matrix tr.is-row th .en, table.matrix th.is-col .code { color: var(--indig
   font-size: var(--step--1);
 }
 .site-footer a { color: #fff; }
-.footer-orgs { background: var(--surface); color: var(--ink); border-top: 1px solid var(--rule); }
-.footer-orgs-inner { display: flex; flex-wrap: wrap; gap: var(--s-5) var(--s-8); padding-block: var(--s-5); }
-.footer-orgs h2 { font-size: var(--step--1); font-weight: 600; color: var(--ink-2); margin-bottom: var(--s-3); }
-.org-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-6); }
-.org { display: inline-flex; align-items: center; gap: var(--s-3); color: var(--ink); font-size: var(--step-0); font-weight: 500; text-decoration: none; }
-.org img { height: 3.5rem; width: auto; flex: none; }
-.site-footer .footer-orgs a.org { color: var(--ink); }
-.site-footer .footer-orgs a.org:hover span { color: var(--indigo-900); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; }
-.site-footer .footer-orgs :focus-visible { outline-color: var(--indigo-700); }
 .footer-grid {
   display: grid;
   gap: var(--s-6);
@@ -814,7 +835,7 @@ table.data.matrix-table tfoot th, table.data.matrix-table tfoot td { font-weight
 
 /* ---------- Print ---------- */
 @media print {
-  .site-header, .deadline-strip, .toc, .nav-toggle, .filter-bar, .actions { display: none !important; }
+  .site-header, .deadline-strip, .logo-bar, .toc, .nav-toggle, .filter-bar, .actions { display: none !important; }
   body { background: #fff; }
   .site-footer { background: none; color: #000; }
   .site-footer a { color: #000; }

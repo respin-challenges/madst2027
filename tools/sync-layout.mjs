@@ -16,6 +16,7 @@
   No dependencies. Optional: the site works without ever running it.
 */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -37,14 +38,15 @@ const NAV = [
   ['contact.html', 'Contact'],
 ];
 
-// Logos in the footer band. Images are decorative (alt=""), because the
-// name is written next to each one. url: null shows the logo without a link.
+// Logo bar at the top of every page: host conference on the left,
+// organisers on the right. w/h are the image files' pixel sizes.
+// url: null shows the logo without a link. alt is the organisation's name.
+const HOST_LOGO = { img: 'assets/img/asli.png', w: 211, h: 160, cls: 'logo-asli' };
 const ORGANISERS = [
-  { img: 'assets/img/iisc.png', w: 181, h: 160, name: 'Indian Institute of Science', url: null },
-  { img: 'assets/img/spire.png', w: 104, h: 160, name: 'SPIRE Lab', url: 'https://spire.ee.iisc.ac.in/' },
-  { img: 'assets/img/respin.png', w: 246, h: 160, name: 'RESPIN', url: 'https://respin.iisc.ac.in/' },
+  { img: 'assets/img/iisc.png', w: 181, h: 160, name: 'Indian Institute of Science (IISc)', lines: ['IISc', 'Indian Institute of Science'], url: null, cls: 'logo-iisc' },
+  { img: 'assets/img/spire.png', w: 104, h: 160, name: 'SPIRE Lab', lines: ['SPIRE Lab', 'IISc'], url: 'https://spire.ee.iisc.ac.in/', cls: 'logo-spire' },
+  { img: 'assets/img/respin.png', w: 246, h: 160, name: 'RESPIN', lines: ['RESPIN'], url: 'https://respin.iisc.ac.in/', cls: 'logo-respin' },
 ];
-const HOST_LOGO = { img: 'assets/img/asli.png', w: 211, h: 160 };
 
 const longDate = (iso) => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
   .format(new Date(iso + 'T00:00:00Z'));
@@ -60,15 +62,44 @@ const indicFonts = showNative
   ? `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500&amp;family=Anek+Devanagari:wght@500&amp;family=Anek+Kannada:wght@500&amp;family=Anek+Telugu:wght@500&amp;display=swap&amp;text=${encodeURIComponent(indicText)}">`
   : '<!-- Indic-script fonts are added here automatically when SHOW_NATIVE is true in assets/js/site.js -->';
 
+// Version tags on the stylesheet and script, so browsers fetch the new
+// files after every change instead of a cached copy.
+const ver = (rel) => createHash('sha1').update(readFileSync(join(root, rel))).digest('hex').slice(0, 8);
+const cssVer = ver('assets/css/site.css');
+const jsVer = ver('assets/js/site.js');
+
 const head = `
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
   ${indicFonts}
-  <link rel="stylesheet" href="assets/css/site.css">
-  <script src="assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=${cssVer}">
+  <script src="assets/js/site.js?v=${jsVer}" defer></script>
   `;
+
+function logo(o) {
+  // The written name is aria-hidden: the image alt already gives it, and the
+  // text is hidden on small screens.
+  const text = o.lines ? `<span class="logo-text" aria-hidden="true">${o.lines.map((l, i) => `<span${i === 0 ? ' class="logo-text-main"' : ''}>${esc(l)}</span>`).join('')}</span>` : '';
+  const img = `<img src="${o.img}" width="${Math.round(o.w / 2)}" height="${Math.round(o.h / 2)}" alt="${esc(o.name)}">${text}`;
+  return o.url
+    ? `<a class="logo ${o.cls}" href="${esc(o.url)}" title="${esc(o.name)}">${img}</a>`
+    : `<span class="logo ${o.cls}" title="${esc(o.name)}">${img}</span>`;
+}
+
+function logoBar() {
+  const host = { ...HOST_LOGO, name: site.host.name, url: site.host.url,
+    lines: [site.host.name, `${site.host.dates.replace(' November', ' Nov').replace(' December', ' Dec')}, ${site.host.city}`] };
+  return `<aside class="logo-bar" aria-label="Host conference and organisers">
+    <div class="wrap logo-bar-inner">
+      ${logo(host)}
+      <ul class="logo-orgs" aria-label="Organised by">
+        ${ORGANISERS.map((o) => `<li>${logo(o)}</li>`).join('\n        ')}
+      </ul>
+    </div>
+  </aside>`;
+}
 
 function header(current) {
   const items = NAV.map(([href, label]) =>
@@ -76,6 +107,7 @@ function header(current) {
   return `
   <a class="skip-link" href="#main">Skip to content</a>
   <aside id="deadline-strip" class="deadline-strip" aria-label="Next date" hidden><div class="wrap"></div></aside>
+  ${logoBar()}
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html"${current === 'index.html' ? ' aria-current="page"' : ''}>
@@ -93,33 +125,11 @@ function header(current) {
   `;
 }
 
-function org(o) {
-  const inner = `<img src="${o.img}" width="${Math.round(o.w / 2)}" height="${Math.round(o.h / 2)}" alt="" loading="lazy"><span>${esc(o.name)}</span>`;
-  return o.url ? `<li><a class="org" href="${esc(o.url)}">${inner}</a></li>` : `<li><span class="org">${inner}</span></li>`;
-}
-
 function footer() {
   const links = [['index.html', 'Home'], ...NAV].map(([href, label]) =>
     `<li><a href="${href}">${label}</a></li>`).join('\n          ');
-  const host = { ...HOST_LOGO, name: site.host.name, url: site.host.url };
   return `
   <footer class="site-footer">
-    <div class="footer-orgs">
-      <div class="wrap footer-orgs-inner">
-        <div class="org-group">
-          <h2>Organised by</h2>
-          <ul class="org-list">
-            ${ORGANISERS.map(org).join('\n            ')}
-          </ul>
-        </div>
-        <div class="org-group">
-          <h2>Hosted at</h2>
-          <ul class="org-list">
-            ${org(host)}
-          </ul>
-        </div>
-      </div>
-    </div>
     <div class="wrap footer-grid">
       <div>
         <p class="footer-name">${esc(site.name)}</p>

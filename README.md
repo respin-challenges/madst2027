@@ -105,7 +105,8 @@ Only enter official results. In `content/leaderboard.json`:
 - **People:** `content/people.json`.
 - **FAQ:** `content/faq.json`. Only add questions with settled answers.
 - **Page text:** edit the HTML file directly. Keep the `<!-- layout:... -->` markers.
-- **Footer logos:** the logo list and their links are at the top of `tools/sync-layout.mjs` (`ORGANISERS`, `HOST_LOGO`); run the script after changing them.
+- **Logo bar (top of every page):** the logos, their names and links are at the top of `tools/sync-layout.mjs` (`HOST_LOGO`, `ORGANISERS`); run the script after changing them.
+- **After editing `site.css` or `site.js`:** run `node tools/sync-layout.mjs`. It adds a version tag (`site.css?v=...`) to every page so visitors' browsers load the new file instead of a cached copy.
 - **Navigation, challenge name, host details in header/footer:** change `tools/sync-layout.mjs` or `content/site.json`, then run `node tools/sync-layout.mjs` from the repository root. It rewrites the shared header, navigation and footer on every page.
 
 ## Previewing locally
@@ -133,6 +134,6 @@ All links are relative, so the site also works at a domain root or under a custo
 
 - The direction matrix (nine languages by nine) is the identity element; the same grid becomes the per-direction score heatmap on the leaderboard. It makes no claim about which languages appear in other benchmarks.
 - Colour: an indigo scale, plus one warm accent reserved for the next deadline. Status is always given in text, never by colour alone.
-- Logos: the ASLI 2027 logo sits next to the host line on the home page; the IISc, SPIRE Lab, RESPIN and ASLI logos appear in a white band at the top of every footer, each with its name written beside it. No other decorative images.
+- Logos: a white bar above the menu on every page, host conference (ASLI 2027) on the left and organisers (IISc, SPIRE Lab, RESPIN) on the right, each with its name beside it on wide screens and logo only on small screens. The bar scrolls away; the menu stays pinned. No other decorative images.
 - Type: Anek (Ek Type) for headings and interface; Source Serif 4 for reading text. Native-script names are hidden until the organisers confirm them (`SHOW_NATIVE` in `assets/js/site.js`); turning them on and running `node tools/sync-layout.mjs` also adds the subset Indic-script fonts.
 - Accessibility: skip link, visible focus, keyboard-operable matrix, labelled regions for scrolling tables, reduced-motion support, WCAG AA contrast.

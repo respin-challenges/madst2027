@@ -11,14 +11,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
   <!-- Indic-script fonts are added here automatically when SHOW_NATIVE is true in assets/js/site.js -->
-  <link rel="stylesheet" href="assets/css/site.css">
-  <script src="assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=149becd4">
+  <script src="assets/js/site.js?v=8f06f5be" defer></script>
   <!-- /layout:head -->
 </head>
 <body>
   <!-- layout:header -->
   <a class="skip-link" href="#main">Skip to content</a>
   <aside id="deadline-strip" class="deadline-strip" aria-label="Next date" hidden><div class="wrap"></div></aside>
+  <aside class="logo-bar" aria-label="Host conference and organisers">
+    <div class="wrap logo-bar-inner">
+      <a class="logo logo-asli" href="https://2027.ieeeasli.org/" title="ASLI 2027"><img src="assets/img/asli.png" width="106" height="80" alt="ASLI 2027"><span class="logo-text" aria-hidden="true"><span class="logo-text-main">ASLI 2027</span><span>29 Nov – 4 Dec 2027, Singapore</span></span></a>
+      <ul class="logo-orgs" aria-label="Organised by">
+        <li><span class="logo logo-iisc" title="Indian Institute of Science (IISc)"><img src="assets/img/iisc.png" width="91" height="80" alt="Indian Institute of Science (IISc)"><span class="logo-text" aria-hidden="true"><span class="logo-text-main">IISc</span><span>Indian Institute of Science</span></span></span></li>
+        <li><a class="logo logo-spire" href="https://spire.ee.iisc.ac.in/" title="SPIRE Lab"><img src="assets/img/spire.png" width="52" height="80" alt="SPIRE Lab"><span class="logo-text" aria-hidden="true"><span class="logo-text-main">SPIRE Lab</span><span>IISc</span></span></a></li>
+        <li><a class="logo logo-respin" href="https://respin.iisc.ac.in/" title="RESPIN"><img src="assets/img/respin.png" width="123" height="80" alt="RESPIN"><span class="logo-text" aria-hidden="true"><span class="logo-text-main">RESPIN</span></span></a></li>
+      </ul>
+    </div>
+  </aside>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html">
@@ -88,24 +98,6 @@
 
   <!-- layout:footer -->
   <footer class="site-footer">
-    <div class="footer-orgs">
-      <div class="wrap footer-orgs-inner">
-        <div class="org-group">
-          <h2>Organised by</h2>
-          <ul class="org-list">
-            <li><span class="org"><img src="assets/img/iisc.png" width="91" height="80" alt="" loading="lazy"><span>Indian Institute of Science</span></span></li>
-            <li><a class="org" href="https://spire.ee.iisc.ac.in/"><img src="assets/img/spire.png" width="52" height="80" alt="" loading="lazy"><span>SPIRE Lab</span></a></li>
-            <li><a class="org" href="https://respin.iisc.ac.in/"><img src="assets/img/respin.png" width="123" height="80" alt="" loading="lazy"><span>RESPIN</span></a></li>
-          </ul>
-        </div>
-        <div class="org-group">
-          <h2>Hosted at</h2>
-          <ul class="org-list">
-            <li><a class="org" href="https://2027.ieeeasli.org/"><img src="assets/img/asli.png" width="106" height="80" alt="" loading="lazy"><span>ASLI 2027</span></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <div class="wrap footer-grid">
       <div>
         <p class="footer-name">MADST Challenge</p>
@@ -137,7 +129,7 @@
       </div>
     </div>
     <div class="wrap footer-base">
-      <span>Last updated <span data-last-updated>23 November 2026</span></span>
+      <span>Last updated <span data-last-updated>24 November 2026</span></span>
       <span>Paper deadlines are 23:59 Anywhere on Earth (AoE), as set by ASLI 2027.</span>
     </div>
   </footer>
